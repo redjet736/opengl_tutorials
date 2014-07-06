@@ -45,7 +45,7 @@ string file_read(const string filename)
 
   if (!filestream.is_open())
   {
-    return NULL;
+    return "";
   }
 
   // read contents of file into string
@@ -64,12 +64,12 @@ string file_read(const string filename)
 GLuint create_shader(string filename, GLenum type)
 {
   string contents = file_read(filename);
-  const GLchar* source = contents.c_str();
-  if (source == NULL) 
+  if (contents.empty())
   {
-    cerr << "Error opening " << filename << endl;
-    return 0;
+  	cout << "Error opening " << filename << endl;
+    return 1;
   }
+  const GLchar* source = contents.c_str();
   GLuint res = glCreateShader(type);
   const GLchar* sources[2] = 
   {
