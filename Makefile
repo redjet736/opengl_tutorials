@@ -1,8 +1,7 @@
 CC=g++
 LDLIBS=-lglut -lGLEW -lGL
-cube: shader_utils.o gl_common.o
-cube.o: res_texture.c
-all: cube
+monkey: shader_utils.o gl_common.o
+all: monkey
 clean:
-	rm -f *.o cube
+	rm -f *.o monkey
 .PHONY: all clean
