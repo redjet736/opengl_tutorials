@@ -3,5 +3,5 @@
 set -e
 
 make
-./cube
+./monkey
 
